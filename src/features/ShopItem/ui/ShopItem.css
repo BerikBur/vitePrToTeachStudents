@@ -1,0 +1,106 @@
+.main-content {
+    padding: 50px 46px 25px 20px;
+    box-sizing: border-box;
+    display: flex;
+    color: #222;
+    width: 100%;
+    height: 100%;
+    flex-flow: column;
+  }
+  
+  h1 {
+    letter-spacing: 0.02rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+  
+  h3 {
+    color: #666;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+  }
+  
+  .description {
+    margin-top: 20px;
+    width: 100%;
+  }
+  
+  .highlight-window.mobile {
+    display: none;
+  }
+  
+  .divider {
+    width: 80%;
+    height: 1px;
+    background: #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .purchase-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .price {
+    font-size: 2.5rem;
+  }
+  
+  button {
+    background: #333;
+    border: none;
+    font-weight: 400;
+    height: 40px;
+    padding-left: 25px;
+    padding-right: 25px;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+  }
+  
+  button:hover {
+    background: #555;
+  }
+
+.highlight-window {
+    height: 550px;
+    width: 400px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    z-index: 10;
+  }
+  
+  .slider-button.prev {
+    left: 10px;
+  }
+  
+  .slider-button.next {
+    right: 10px;
+  }
+  
+  .slider-button:hover {
+    background: rgba(0, 0, 0, 0.8);
+  }

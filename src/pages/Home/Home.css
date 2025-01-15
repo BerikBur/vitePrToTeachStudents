@@ -1,0 +1,217 @@
+/* Основные стили для контейнера */
+.container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #999;
+}
+
+/* Окно с содержимым */
+.window {
+  background: #fff;
+  width: 470px;
+  display: flex;
+  min-height: 400px;
+  position: relative;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Окно с изображением товара */
+.highlight-window {
+  height: 550px;
+  width: 400px;
+  background: #ccc;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+  position: relative;
+  background-position: center top;
+}
+
+/* Оверлей для изображения */
+.highlight-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  transition: opacity .4s ease;
+  background-position: center top;
+}
+
+/* Фоновый элемент */
+.background-element {
+  background: #457;
+  position: absolute;
+  width: 120%;
+  height: 400px;
+  left: -50px;
+  top: -80px;
+  transform: rotate(-5deg);
+  transition: background .6s ease;
+}
+
+/* Разделитель */
+.divider {
+  width: 80%;
+  height: 1px;
+  background: #ddd;
+  margin: 20px auto;
+}
+
+/* Основное содержимое */
+.main-content {
+  padding: 50px 46px 25px 20px;
+  box-sizing: border-box;
+  display: flex;
+  color: #222;
+  width: 100%;
+  height: 100%;
+  flex-flow: column;
+}
+
+/* Заголовок */
+h1 {
+  letter-spacing: .02rem;
+  font-size: 3rem;
+  text-transform: uppercase;
+}
+
+/* Подзаголовок */
+h3 {
+  color: #666;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Описание */
+.description {
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Информация о покупке */
+.purchase-info {
+  justify-content: space-between;
+  display: flex;
+}
+
+/* Цена */
+.price {
+  font-size: 2.5rem;
+}
+
+/* Медиа-запросы */
+@media (max-width: 850px) {
+  body {
+    background: #fff;
+    overflow: auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h3, h2 {
+    font-size: 1rem;
+  }
+  
+  .container {
+    background: #fff;
+    overflow: auto;
+  }
+  
+  .background-element {
+    display: none;
+  }
+  
+  .main-content {
+    overflow: auto;
+    height: auto;
+    padding-right: 25px;
+  }
+  
+  .highlight-window {
+    position: fixed;
+    left: 0;
+    height: 100%;
+    width: 50%;
+  }
+  
+  .window {
+    overflow: auto;
+    width: 50%;
+    height: auto;
+    position: absolute;
+    box-shadow: none;
+    right: 0;
+  }
+  
+  .price {
+    margin-bottom: 15px;
+  }
+  
+  .purchase-info {
+    flex-flow: column;
+  }
+}
+
+@media (max-width: 550px) {
+  .highlight-window {
+    display: none;
+  }
+  
+  body {
+    overflow: auto;
+    height: auto;
+  }
+  
+  .highlight-window.mobile {
+    position: relative;
+    display: block;
+    height: 500px;
+    box-shadow: none;
+    border: 1px solid #ccc;
+    margin-top: 15px;
+    width: 100%;
+  }
+  
+  .container {
+    overflow: auto;
+  }
+  
+  .window {
+    width: 100%;
+    position: relative;
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+/* Стили для изображения */
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.product-image.loaded {
+  opacity: 1;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 10;
+}

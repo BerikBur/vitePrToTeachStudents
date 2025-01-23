@@ -1,0 +1,15 @@
+.icon-switch {
+  text-align: right;
+  padding: 20px;
+}
+
+.icon-switch .material-icons {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #666;
+  transition: color 0.3s ease;
+}
+
+.icon-switch .material-icons:hover {
+  color: #000;
+}

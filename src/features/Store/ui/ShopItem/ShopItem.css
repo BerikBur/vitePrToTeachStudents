@@ -1,0 +1,48 @@
+.shop-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  gap: 2rem;
+}
+
+.shop-item__image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.shop-item__title {
+  flex: 1;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.shop-item__color {
+  flex: 1;
+  margin: 0;
+  color: #666;
+}
+
+.shop-item__price {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-right: 2rem;
+}
+
+.shop-item__button {
+  padding: 0.5rem 1rem;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.shop-item__button:hover {
+  background: #0056b3;
+}

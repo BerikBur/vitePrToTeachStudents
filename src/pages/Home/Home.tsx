@@ -1,6 +1,7 @@
 import { FC, useCallback, useState } from 'react';
 import { ShopItemFunc } from '@features/ShopItem';
 import { ShopItemClass } from '@features/ShopItem';
+import { Navigation } from '@widgets/Navigation/Navigation';
 import './Home.css';
 
 const item = {
@@ -40,38 +41,41 @@ const HomePage: FC = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="background-element"></div>
-      <div className="highlight-window">
-        <div className="highlight-overlay">
-          <img
-            key={currentIndex}
-            src={images[currentIndex]}
-            alt={`Product view ${currentIndex + 1}`}
-            className={`product-image ${isImageLoaded ? 'loaded' : ''}`}
-            onLoad={handleImageLoad}
-          />
+    <div className="home-page">
+      <Navigation />
+      <div className="container">
+        <div className="background-element"></div>
+        <div className="highlight-window">
+          <div className="highlight-overlay">
+            <img
+              key={currentIndex}
+              src={images[currentIndex]}
+              alt={`Product view ${currentIndex + 1}`}
+              className={`product-image ${isImageLoaded ? 'loaded' : ''}`}
+              onLoad={handleImageLoad}
+            />
+          </div>
+          <button className="slider-button prev" onClick={prevImage}>
+            &lt;
+          </button>
+          <button className="slider-button next" onClick={nextImage}>
+            &gt;
+          </button>
         </div>
-        <button className="slider-button prev" onClick={prevImage}>
-          &lt;
-        </button>
-        <button className="slider-button next" onClick={nextImage}>
-          &gt;
+        <div className="window">
+          {useClassComponent ? (
+            <ShopItemClass item={item} />
+          ) : (
+            <ShopItemFunc item={item} />
+          )}
+        </div>
+        <button
+          onClick={() => setUseClassComponent(!useClassComponent)}
+          className="toggleButton"
+        >
+          Переключить на {useClassComponent ? 'функциональный' : 'классовый'} компонент
         </button>
       </div>
-      <div className="window">
-        {useClassComponent ? (
-          <ShopItemClass item={item} />
-        ) : (
-          <ShopItemFunc item={item} />
-        )}
-      </div>
-      <button
-        onClick={() => setUseClassComponent(!useClassComponent)}
-        className="toggleButton"
-      >
-        Переключить на {useClassComponent ? 'функциональный' : 'классовый'} компонент
-      </button>
     </div>
   );
 };

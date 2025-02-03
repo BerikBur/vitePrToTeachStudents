@@ -1,30 +1,45 @@
 .main-navigation {
   position: relative;
   z-index: 100;
-  padding: 20px;
+  padding: 1rem;
   text-align: center;
-  background-color: white;
+  background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-nav {
+.main-navigation nav {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
 .nav-button {
+  display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
   color: white;
   text-decoration: none;
   border-radius: 5px;
-  display: inline-block;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s;
+  font-size: 14px;
+  border: none;
+  cursor: pointer;
 }
 
 .nav-button:hover {
   background-color: #0056b3;
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .main-navigation nav {
+    flex-direction: column;
+  }
+  
+  .nav-button {
+    width: 100%;
+    text-align: center;
+  }
 }

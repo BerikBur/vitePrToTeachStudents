@@ -2,6 +2,7 @@ import { FC, useCallback, useState } from 'react';
 import { ShopItemFunc } from '@features/ShopItem';
 import { ShopItemClass } from '@features/ShopItem';
 import { Navigation } from '@widgets/Navigation/Navigation';
+import { Link } from 'react-router-dom';
 import './Home.css';
 
 const item = {
@@ -42,7 +43,12 @@ const HomePage: FC = () => {
 
   return (
     <div className="home-page">
-      <Navigation />
+      <Navigation>
+        <Link to="/portfolio" className="nav-button">Перейти к портфолио</Link>
+        <Link to="/store" className="nav-button">Перейти в магазин</Link>
+        <Link to="/stars" className="nav-button">Перейти к рейтингу фильмов</Link>
+        <Link to="/listing" className="nav-button">Перейти к каталогу Etsy</Link>
+      </Navigation>
       <div className="container">
         <div className="background-element"></div>
         <div className="highlight-window">
